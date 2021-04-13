@@ -8,6 +8,7 @@ const app= express()
 const htmldirectory = path.join(__dirname,'../public')
 const viewspath = path.join(__dirname,'../templates/views')
 const partialsPath=path.join(__dirname,'../templates/partials')
+const port = process.env.PORT || 3000
 app.use(express.static(htmldirectory))
 
 app.set('view engine','hbs')
@@ -69,6 +70,6 @@ app.get('*',(req,res)=>{
 
    })
 })
- app.listen(2000,()=>{
+ app.listen(port,()=>{
      console.log('server is up and running')
  })
